@@ -1,0 +1,52 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: space-between;
+}
+
+.children {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    box-shadow: -5px 5px 15px 10px rgba(0, 0, 0, 0.1);
+    /* background-color: aqua; */
+}
+
+.logo {
+    width: 25%;
+    padding: 5em;
+    height: 100%;
+}
+
+.dyshezText {
+    color: #E3026F;
+    font-weight: bold;
+}
+
+.fragmentContainer {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.childrenContainer {
+    width: 400px;
+    height: 100%;
+    box-shadow: 5px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+}
+
+.login_layout {
+    background-image: url('/background_login.png');
+    height: 100%;
+    width: 520px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
