@@ -1,7 +1,33 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import Image from 'next/image'
 import styles from '../../../../styles/login/loginLayout.module.css';
 export const LoginLayout = ({children}: React.PropsWithChildren) => {
+
+  const [loginClass, setLoginClass] = useState(styles.buttonStyleActive);
+  const [registerClass, setRegisterClass] = useState(styles.buttonStyleInactive);
+  const [childrenClass, setChildrenClass] = useState(styles.login_layout);
+  const [childrenContainerClass, setChildrenContainerClass] = useState(styles.childrenContainer);
+
+  const changeLoginClass = () => {
+    if (loginClass === styles.buttonStyleInactive) {
+      setLoginClass(styles.buttonStyleActive);
+      setRegisterClass(styles.buttonStyleInactive);
+      setChildrenClass(styles.login_layout);
+      setChildrenContainerClass(styles.childrenContainer);
+    }
+  };
+
+  const changeRegisterClass = () => {
+    if (registerClass === styles.buttonStyleInactive) {
+      setRegisterClass(styles.buttonStyleActive);
+      setLoginClass(styles.buttonStyleInactive);
+      setChildrenClass(styles.login_inactive);
+      setChildrenContainerClass(styles.childrenContainerFull);
+    }
+  };
+
+
   return (
     <>
       <div className={styles.container}>
@@ -22,10 +48,24 @@ export const LoginLayout = ({children}: React.PropsWithChildren) => {
           <div 
             className={styles.children}
           >
-            <div className={styles.childrenContainer}>
+            <div className={childrenContainerClass}>
+              <div className={styles.buttonsContainer}>
+                <button
+                  className={loginClass}
+                  onClick={()=>{changeLoginClass()}}
+                >
+                  Login
+                </button>
+                <button
+                  className={registerClass}
+                  onClick={()=>{changeRegisterClass()}}
+                >
+                  Register
+                </button>
+              </div>
               {children}
             </div>
-            <div className={styles.login_layout}>
+            <div className={childrenClass}>
 
             </div>
           </div>

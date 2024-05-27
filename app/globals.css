@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.login_layout {
-  background-image: url('/background_login.png');
+*:focus {
+  outline: none;
 }

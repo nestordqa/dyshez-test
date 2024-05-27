@@ -10,7 +10,8 @@ const config: Config = {
     colors: {
       'pink': '#E3026F',
       'primary-text': '#0C0C0C',
-      'login': '#f6f6f6'
+      'login': '#f6f6f6',
+      'red': '#FF0000'
     },
     extend: {
       backgroundImage: {
